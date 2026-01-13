@@ -1,0 +1,947 @@
+{
+  "meta": {
+    "version": "2.0",
+    "lastUpdated": "2024-12-14",
+    "totalProducts": 22,
+    "currency": "INR",
+    "company": "WD Alpha Robotics",
+    "description": "Complete product catalog for WD Alpha Robotics modular kits"
+  },
+  
+  "categories": [
+    {
+      "id": "main",
+      "name": "Main Modules",
+      "description": "Complete standalone robotics kits with all necessary components",
+      "icon": "fas fa-cube",
+      "color": "#3b82f6",
+      "count": 10
+    },
+    {
+      "id": "extension",
+      "name": "Extension Modules",
+      "description": "Add-on kits to upgrade existing WD Alpha robots",
+      "icon": "fas fa-puzzle-piece",
+      "color": "#10b981",
+      "count": 12
+    }
+  ],
+  
+  "tags": [
+    "starter", "ai", "vision", "premium", "new", "wireless", 
+    "autonomous", "education", "research", "hobby", "advanced",
+    "upgrade", "sensors", "control", "bluetooth", "remote",
+    "line-following", "obstacle-avoidance", "human-following"
+  ],
+  
+  "products": [
+    {
+      "id": "WD-001",
+      "sku": "ALPHA-MOD-001",
+      "name": "WD Alpha Module (I) - Foundation Kit",
+      "shortName": "Foundation Kit",
+      "category": "main",
+      "specialty": "Robot Chassis Kit",
+      "description": "The ultimate upgradeable base structure for beginners. Start your robotics journey with this comprehensive chassis kit that includes everything needed to build your first robot.",
+      "detailedDescription": "The WD Alpha Module I is the perfect starting point for robotics enthusiasts. This kit includes a sturdy aluminum chassis, high-torque motors, durable wheels, and all necessary mounting hardware. Designed with modularity in mind, it serves as the foundation for all future upgrades.",
+      
+      "technicalSpecs": {
+        "dimensions": "25cm x 20cm x 15cm",
+        "weight": "2.5kg",
+        "material": "Aluminum alloy chassis",
+        "power": "9V battery (not included)",
+        "motors": "2x 200 RPM DC motors",
+        "wheels": "2x 65mm rubber wheels + 1 caster wheel",
+        "microcontroller": "Arduino Uno compatible",
+        "sensors": "None (upgradable)",
+        "connectivity": "None (upgradable)"
+      },
+      
+      "features": [
+        "Upgradeable modular design",
+        "Sturdy aluminum chassis",
+        "High-torque DC motors",
+        "Pre-drilled mounting holes",
+        "Beginner-friendly assembly",
+        "Compatible with all WD Alpha extensions"
+      ],
+      
+      "includedComponents": [
+        "Aluminum chassis frame",
+        "2x 200 RPM DC motors",
+        "2x 65mm rubber wheels",
+        "1x caster wheel",
+        "Motor mounting brackets",
+        "Screw set and tools",
+        "Assembly guide"
+      ],
+      
+      "learningOutcomes": [
+        "Basic robotics principles",
+        "Mechanical assembly skills",
+        "Motor control fundamentals",
+        "Modular design concepts"
+      ],
+      
+      "compatibility": ["All WD Alpha Extension Modules"],
+      "difficultyLevel": "Beginner",
+      "ageGroup": "12+",
+      "warranty": "1 year",
+      
+      "pricing": {
+        "componentPrice": 1100,
+        "margin": 138,
+        "discountAmount": 1287,
+        "finalPrice": 1300,
+        "currency": "INR",
+        "discountPercentage": 10,
+        "marginPercentage": 10
+      },
+      
+      "inventory": {
+        "stock": 45,
+        "lowStockThreshold": 5,
+        "inStock": true,
+        "backorder": false
+      },
+      
+      "media": {
+        "images": ["module1-1.jpg", "module1-2.jpg", "module1-3.jpg"],
+        "videos": ["module1-demo.mp4"],
+        "documentation": ["manual-v1.2.pdf", "schematics.pdf"]
+      },
+      
+      "launchInfo": {
+        "launchDate": "2023-01-15",
+        "isNew": false,
+        "isFeatured": true,
+        "bestseller": true,
+        "popularity": 95
+      },
+      
+      "tags": ["starter", "foundation", "beginner", "chassis", "educational"],
+      "relatedProducts": ["WD-002", "WD-009", "WD-010"],
+      
+      "seo": {
+        "title": "WD Alpha Foundation Kit - Beginner Robotics Starter Kit",
+        "description": "Start your robotics journey with the WD Alpha Foundation Kit. Perfect for beginners with modular upgradeable design.",
+        "keywords": "beginner robotics kit, starter robot, educational robotics, modular chassis"
+      }
+    },
+    
+    {
+      "id": "WD-002",
+      "sku": "ALPHA-MOD-002",
+      "name": "WD Alpha Module (II) - Smart Navigator",
+      "shortName": "Smart Navigator",
+      "category": "main",
+      "specialty": "Obstacle Avoiding & Human Following Robot",
+      "description": "An intelligent robot that autonomously navigates while avoiding obstacles and following humans. Perfect for learning sensor integration and autonomous systems.",
+      "detailedDescription": "The WD Alpha Module II introduces advanced sensor capabilities with ultrasonic distance sensors and infrared human detection. This kit teaches autonomous navigation principles while providing hours of interactive fun.",
+      
+      "technicalSpecs": {
+        "dimensions": "28cm x 22cm x 18cm",
+        "weight": "3.2kg",
+        "sensors": "3x ultrasonic, 2x IR human detection",
+        "microcontroller": "Arduino Mega compatible",
+        "processing": "16MHz ATmega2560",
+        "battery": "12V rechargeable Li-ion",
+        "runTime": "4-6 hours",
+        "range": "Ultrasonic: 2cm-400cm, IR: 10cm-80cm"
+      },
+      
+      "features": [
+        "Autonomous obstacle avoidance",
+        "Human following capability",
+        "Multiple sensor fusion",
+        "Real-time decision making",
+        "LED status indicators",
+        "Remote control option"
+      ],
+      
+      "includedComponents": [
+        "All Module I components",
+        "3x ultrasonic sensors",
+        "2x IR human detection sensors",
+        "Sensor mounting hardware",
+        "Enhanced microcontroller",
+        "12V rechargeable battery",
+        "Advanced code examples"
+      ],
+      
+      "learningOutcomes": [
+        "Sensor integration",
+        "Autonomous navigation",
+        "Obstacle detection algorithms",
+        "Human-robot interaction"
+      ],
+      
+      "pricing": {
+        "componentPrice": 2950,
+        "margin": 385,
+        "discountAmount": 3452,
+        "finalPrice": 3450,
+        "currency": "INR"
+      },
+      
+      "inventory": {
+        "stock": 32,
+        "lowStockThreshold": 5,
+        "inStock": true
+      },
+      
+      "launchInfo": {
+        "launchDate": "2023-03-20",
+        "isNew": false,
+        "isFeatured": true,
+        "popularity": 88
+      },
+      
+      "tags": ["autonomous", "sensors", "ai", "navigation", "interactive"],
+      "relatedProducts": ["WD-001", "WD-006", "WD-011"]
+    },
+    
+    {
+      "id": "WD-003",
+      "sku": "ALPHA-MOD-003",
+      "name": "WD Alpha Module (III) - Line Tracer Pro",
+      "shortName": "Line Tracer Pro",
+      "category": "main",
+      "specialty": "Line Following Robot",
+      "description": "Professional-grade line following robot with multi-sensor array and adaptive speed control. Perfect for robotics competitions and advanced learning.",
+      "detailedDescription": "Features an array of 8 IR sensors for precise line detection, PID control for smooth movement, and adjustable speed settings. Comes with multiple track patterns and challenges.",
+      
+      "technicalSpecs": {
+        "sensors": "8x IR line sensors",
+        "accuracy": "±1mm line detection",
+        "speed": "Adjustable 0-1 m/s",
+        "algorithm": "PID control",
+        "trackWidth": "15-25mm compatible"
+      },
+      
+      "features": [
+        "8-sensor array for precision",
+        "PID control algorithm",
+        "Adjustable speed settings",
+        "Multiple track patterns included",
+        "Competition ready"
+      ],
+      
+      "pricing": {
+        "componentPrice": 3210,
+        "margin": 417,
+        "discountAmount": 3756,
+        "finalPrice": 3750,
+        "currency": "INR"
+      },
+      
+      "launchInfo": {
+        "launchDate": "2023-04-10",
+        "isNew": false,
+        "popularity": 76
+      },
+      
+      "tags": ["line-following", "precision", "competition", "sensors", "control"],
+      "relatedProducts": ["WD-002", "WD-006", "WD-012"]
+    },
+    
+    {
+      "id": "WD-004",
+      "sku": "ALPHA-MOD-004",
+      "name": "WD Alpha Module (IV) - Remote Commander",
+      "shortName": "Remote Commander",
+      "category": "main",
+      "specialty": "IR Remote Controlled Robot",
+      "description": "Full infrared remote control system with 10-meter range and 12 function controls. Perfect for learning wireless communication and control systems.",
+      
+      "pricing": {
+        "componentPrice": 2930,
+        "margin": 380,
+        "discountAmount": 3428,
+        "finalPrice": 3450,
+        "currency": "INR"
+      },
+      
+      "features": [
+        "10m IR remote range",
+        "12 function controls",
+        "Speed control",
+        "LED indicators",
+        "Emergency stop"
+      ],
+      
+      "tags": ["remote", "control", "wireless", "ir", "manual-control"],
+      "launchInfo": {
+        "launchDate": "2023-05-05",
+        "isNew": false,
+        "popularity": 72
+      }
+    },
+    
+    {
+      "id": "WD-005",
+      "sku": "ALPHA-MOD-005",
+      "name": "WD Alpha Module (V) - Bluetooth Commander",
+      "shortName": "Bluetooth Commander",
+      "category": "main",
+      "specialty": "Bluetooth Controlled Car",
+      "description": "Smartphone-controlled robot via Bluetooth with custom mobile app. Features real-time sensor data display and gesture controls.",
+      
+      "pricing": {
+        "componentPrice": 3280,
+        "margin": 426,
+        "discountAmount": 3838,
+        "finalPrice": 3850,
+        "currency": "INR"
+      },
+      
+      "features": [
+        "Bluetooth 5.0 connectivity",
+        "iOS/Android app",
+        "Gesture controls",
+        "Real-time sensor display",
+        "Custom control layouts"
+      ],
+      
+      "tags": ["bluetooth", "mobile", "wireless", "smartphone", "app-controlled"],
+      "launchInfo": {
+        "launchDate": "2023-06-15",
+        "isNew": false,
+        "popularity": 81
+      }
+    },
+    
+    {
+      "id": "WD-006",
+      "sku": "ALPHA-MOD-006",
+      "name": "WD Alpha Module (VI) - Tire Beast",
+      "shortName": "Tire Beast",
+      "category": "main",
+      "specialty": "LFR + Obstacle Avoidance + Human Following",
+      "description": "Triple-threat robot combining line following, obstacle avoidance, and human following capabilities. The ultimate all-in-one learning platform.",
+      
+      "pricing": {
+        "componentPrice": 3490,
+        "margin": 453,
+        "discountAmount": 4083,
+        "finalPrice": 4100,
+        "currency": "INR"
+      },
+      
+      "features": [
+        "Triple-mode operation",
+        "Mode switching capability",
+        "Advanced sensor fusion",
+        "High-capacity battery",
+        "Performance display"
+      ],
+      
+      "tags": ["combo", "advanced", "multi-mode", "all-in-one", "premium"],
+      "launchInfo": {
+        "launchDate": "2023-07-20",
+        "isNew": false,
+        "popularity": 85
+      }
+    },
+    
+    {
+      "id": "WD-007",
+      "sku": "ALPHA-MOD-007",
+      "name": "WD Alpha Module (VII) - Quad Bot",
+      "shortName": "Quad Bot",
+      "category": "main",
+      "specialty": "LFR + Obstacle Avoidance + Human Following + Bluetooth Controlled",
+      "description": "The most advanced WD Alpha kit with four operational modes. Includes everything for complete robotics mastery.",
+      
+      "pricing": {
+        "componentPrice": 4140,
+        "margin": 538,
+        "discountAmount": 4844,
+        "finalPrice": 4850,
+        "currency": "INR"
+      },
+      
+      "features": [
+        "Quad-mode operation",
+        "Wireless programming",
+        "Data logging",
+        "Advanced algorithms",
+        "Research capabilities"
+      ],
+      
+      "tags": ["ultimate", "quad-mode", "research", "advanced", "premium"],
+      "launchInfo": {
+        "launchDate": "2023-08-25",
+        "isNew": false,
+        "popularity": 79
+      }
+    },
+    
+    {
+      "id": "WD-008",
+      "sku": "ALPHA-MOD-008",
+      "name": "WD Alpha Module (VIII) - Fall MAX",
+      "shortName": "Fall MAX",
+      "category": "main",
+      "specialty": "Autonomous System & Manual Controlled Robot",
+      "description": "The flagship WD Alpha kit with autonomous decision making and manual override. Designed for research and advanced projects.",
+      
+      "pricing": {
+        "componentPrice": 4490,
+        "margin": 583,
+        "discountAmount": 5253,
+        "finalPrice": 5250,
+        "currency": "INR"
+      },
+      
+      "features": [
+        "Full autonomous mode",
+        "Manual override",
+        "Advanced processing",
+        "Expandable memory",
+        "Research-grade components"
+      ],
+      
+      "tags": ["flagship", "autonomous", "research", "max", "premium"],
+      "launchInfo": {
+        "launchDate": "2023-09-30",
+        "isNew": false,
+        "isFeatured": true,
+        "popularity": 82
+      }
+    },
+    
+    {
+      "id": "WD-009",
+      "sku": "EXT-MOD-002",
+      "name": "WD Alpha Extension Module (II)",
+      "shortName": "Obstacle Avoidance Add-on",
+      "category": "extension",
+      "specialty": "Obstacle Avoiding & Human Following Robot",
+      "description": "Upgrade your existing WD Alpha robot with obstacle avoidance and human following capabilities. Easy installation with plug-and-play components.",
+      
+      "pricing": {
+        "componentPrice": 1930,
+        "margin": 231,
+        "discountAmount": 2084,
+        "finalPrice": 2080,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["WD-001", "WD-003", "WD-004", "WD-005"],
+      "installationTime": "30-45 minutes",
+      "difficulty": "Intermediate",
+      
+      "tags": ["addon", "upgrade", "sensors", "autonomous"],
+      "launchInfo": {
+        "launchDate": "2023-02-15",
+        "isNew": false
+      }
+    },
+    
+    {
+      "id": "WD-010",
+      "sku": "EXT-MOD-003",
+      "name": "WD Alpha Extension Module (III)",
+      "shortName": "Line Following Add-on",
+      "category": "extension",
+      "specialty": "Line Following Robot",
+      "description": "Add precise line following capabilities to your robot. Includes 4 IR sensors and control board.",
+      
+      "pricing": {
+        "componentPrice": 2180,
+        "margin": 261,
+        "discountAmount": 2354,
+        "finalPrice": 2350,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["WD-001", "WD-002", "WD-004", "WD-005"],
+      "tags": ["addon", "line-following", "precision", "upgrade"],
+      "launchInfo": {
+        "launchDate": "2023-04-20",
+        "isNew": false
+      }
+    },
+    
+    {
+      "id": "WD-011",
+      "sku": "EXT-MOD-004",
+      "name": "WD Alpha Extension Module (IV)",
+      "shortName": "Remote Control Add-on",
+      "category": "extension",
+      "specialty": "Remote Controlled Car",
+      "description": "Add IR remote control functionality to your existing robot.",
+      
+      "pricing": {
+        "componentPrice": 1910,
+        "margin": 229,
+        "discountAmount": 2063,
+        "finalPrice": 2080,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["WD-001", "WD-002", "WD-003"],
+      "tags": ["addon", "remote", "control", "upgrade"],
+      "launchInfo": {
+        "launchDate": "2023-05-25",
+        "isNew": false
+      }
+    },
+    
+    {
+      "id": "WD-012",
+      "sku": "EXT-MOD-005",
+      "name": "WD Alpha Extension Module (V)",
+      "shortName": "Bluetooth Control Add-on",
+      "category": "extension",
+      "specialty": "Bluetooth Controlled Car",
+      "description": "Upgrade your robot with Bluetooth smartphone control.",
+      
+      "pricing": {
+        "componentPrice": 2250,
+        "margin": 270,
+        "discountAmount": 2430,
+        "finalPrice": 2450,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["WD-001", "WD-002", "WD-003", "WD-004"],
+      "tags": ["addon", "bluetooth", "mobile", "upgrade"],
+      "launchInfo": {
+        "launchDate": "2023-06-30",
+        "isNew": false
+      }
+    },
+    
+    {
+      "id": "WD-013",
+      "sku": "EXT-MOD-006",
+      "name": "WD Alpha Extension Module (VI)",
+      "shortName": "Tire Beast Upgrade",
+      "category": "extension",
+      "specialty": "LFR + Obstacle Avoidance + Human Following",
+      "description": "Transform your robot into a triple-capability Tire Beast.",
+      
+      "pricing": {
+        "componentPrice": 2470,
+        "margin": 296,
+        "discountAmount": 2668,
+        "finalPrice": 2700,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["WD-001", "WD-002", "WD-003", "WD-004", "WD-005"],
+      "tags": ["addon", "combo", "upgrade", "advanced"],
+      "launchInfo": {
+        "launchDate": "2023-08-05",
+        "isNew": false
+      }
+    },
+    
+    {
+      "id": "WD-014",
+      "sku": "EXT-MOD-007",
+      "name": "WD Alpha Extension Module (VII)",
+      "shortName": "Quad Bot Upgrade",
+      "category": "extension",
+      "specialty": "Quad Mode Upgrade Kit",
+      "description": "Upgrade to quad-mode operation with this comprehensive kit.",
+      
+      "pricing": {
+        "componentPrice": 3120,
+        "margin": 374,
+        "discountAmount": 3378,
+        "finalPrice": 3400,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["WD-001", "WD-002", "WD-003", "WD-004", "WD-005", "WD-006"],
+      "tags": ["addon", "quad-mode", "premium", "upgrade"],
+      "launchInfo": {
+        "launchDate": "2023-09-10",
+        "isNew": false
+      }
+    },
+    
+    {
+      "id": "WD-015",
+      "sku": "EXT-MOD-008",
+      "name": "WD Alpha Extension Module (VIII)",
+      "shortName": "Fall MAX Upgrade",
+      "category": "extension",
+      "specialty": "Autonomous System Upgrade",
+      "description": "Add autonomous decision making capabilities to your robot.",
+      
+      "pricing": {
+        "componentPrice": 3470,
+        "margin": 416,
+        "discountAmount": 3748,
+        "finalPrice": 3750,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["WD-001", "WD-002", "WD-003", "WD-004", "WD-005", "WD-006", "WD-007"],
+      "tags": ["addon", "autonomous", "upgrade", "premium"],
+      "launchInfo": {
+        "launchDate": "2023-10-15",
+        "isNew": false
+      }
+    },
+    
+    // ============================================
+    // NEW PRODUCTS LAUNCHED IN LAST 30 DAYS
+    // ============================================
+    
+    {
+      "id": "WD-016",
+      "sku": "ALPHA-MOD-009",
+      "name": "WD Alpha Module (IX) - AI Vision Bot",
+      "shortName": "AI Vision Bot",
+      "category": "main",
+      "specialty": "AI-Powered Computer Vision Robot",
+      "description": "Revolutionary robotics kit with real-time object detection, facial recognition, and AI decision making. Powered by Raspberry Pi 4 and custom AI models.",
+      "detailedDescription": "The first WD Alpha module with integrated AI capabilities. Features a 8MP camera, dedicated AI processor, and pre-trained models for object detection, face recognition, and gesture control. Perfect for AI/ML education and advanced projects.",
+      
+      "technicalSpecs": {
+        "processor": "Raspberry Pi 4 (4GB)",
+        "aiAccelerator": "Intel Neural Compute Stick 2",
+        "camera": "8MP Raspberry Pi Camera V2",
+        "visionCapabilities": ["Object detection", "Face recognition", "Color tracking", "Gesture recognition"],
+        "processingSpeed": "10 FPS real-time",
+        "memory": "4GB RAM, 32GB microSD",
+        "connectivity": "Wi-Fi, Bluetooth 5.0, Ethernet",
+        "preTrainedModels": ["YOLOv4", "MobileNet", "FaceNet"]
+      },
+      
+      "features": [
+        "Real-time object detection",
+        "Facial recognition system",
+        "Gesture control interface",
+        "Custom AI model training",
+        "Cloud connectivity",
+        "Multiple operation modes"
+      ],
+      
+      "includedComponents": [
+        "Raspberry Pi 4 (4GB)",
+        "Intel Neural Compute Stick 2",
+        "8MP camera module",
+        "Camera mounting arm",
+        "32GB microSD with pre-loaded OS",
+        "AI software suite",
+        "Sample datasets"
+      ],
+      
+      "learningOutcomes": [
+        "AI and computer vision fundamentals",
+        "Neural network training",
+        "Real-time image processing",
+        "Edge computing concepts",
+        "Python programming for AI"
+      ],
+      
+      "compatibility": ["Can be combined with other modules"],
+      "difficultyLevel": "Advanced",
+      "ageGroup": "16+",
+      
+      "pricing": {
+        "componentPrice": 12500,
+        "margin": 1625,
+        "discountAmount": 14125,
+        "finalPrice": 14200,
+        "currency": "INR",
+        "discountPercentage": 10,
+        "marginPercentage": 10
+      },
+      
+      "inventory": {
+        "stock": 25,
+        "lowStockThreshold": 3,
+        "inStock": true,
+        "preorder": false
+      },
+      
+      "media": {
+        "images": ["ai-vision-1.jpg", "ai-vision-2.jpg", "ai-vision-3.jpg"],
+        "videos": ["ai-demo.mp4", "setup-tutorial.mp4"],
+        "documentation": ["ai-manual.pdf", "api-docs.pdf", "dataset-guide.pdf"]
+      },
+      
+      "launchInfo": {
+        "launchDate": "2024-11-25",
+        "isNew": true,
+        "isFeatured": true,
+        "bestseller": false,
+        "popularity": 92,
+        "launchPromotion": {
+          "active": true,
+          "description": "Launch Special: Free AI course worth ₹2000",
+          "validUntil": "2024-12-31"
+        }
+      },
+      
+      "tags": ["ai", "vision", "new", "premium", "raspberry-pi", "machine-learning", "computer-vision"],
+      "relatedProducts": ["WD-017", "WD-008", "WD-006"],
+      
+      "seo": {
+        "title": "AI Vision Robot Kit with Computer Vision & Machine Learning",
+        "description": "Learn AI with our Vision Bot featuring real-time object detection, facial recognition, and custom model training.",
+        "keywords": "AI robot, computer vision, machine learning kit, face recognition, object detection robotics"
+      }
+    },
+    
+    {
+      "id": "WD-017",
+      "sku": "EXT-MOD-009",
+      "name": "WD Alpha Extension Module (IX)",
+      "shortName": "AI Vision Upgrade Kit",
+      "category": "extension",
+      "specialty": "AI Vision Upgrade Kit",
+      "description": "Add AI vision capabilities to your existing WD Alpha robot. Includes camera, AI processor, and complete software suite.",
+      "detailedDescription": "Transform your standard WD Alpha robot into an AI-powered vision system. This upgrade kit includes everything needed for computer vision projects without buying a completely new robot.",
+      
+      "technicalSpecs": {
+        "camera": "5MP wide-angle",
+        "processor": "ESP32-CAM with AI acceleration",
+        "visionCapabilities": ["Object detection", "Color tracking", "Simple face detection"],
+        "connectivity": "Wi-Fi, Bluetooth",
+        "compatibility": "Works with all main modules"
+      },
+      
+      "features": [
+        "Plug-and-play installation",
+        "Web-based control interface",
+        "Pre-trained models included",
+        "Real-time video streaming",
+        "Mobile app control"
+      ],
+      
+      "includedComponents": [
+        "ESP32-CAM module",
+        "Camera mounting bracket",
+        "Connection cables",
+        "Power supply",
+        "SD card with software",
+        "Documentation"
+      ],
+      
+      "installationTime": "20-30 minutes",
+      "difficulty": "Intermediate",
+      
+      "pricing": {
+        "componentPrice": 4200,
+        "margin": 546,
+        "discountAmount": 4746,
+        "finalPrice": 4800,
+        "currency": "INR"
+      },
+      
+      "inventory": {
+        "stock": 40,
+        "inStock": true
+      },
+      
+      "launchInfo": {
+        "launchDate": "2024-11-28",
+        "isNew": true,
+        "isFeatured": true,
+        "popularity": 87
+      },
+      
+      "tags": ["ai", "vision", "new", "upgrade", "camera", "addon", "smart"],
+      "relatedProducts": ["WD-016", "WD-001", "WD-002"]
+    },
+    
+    {
+      "id": "WD-018",
+      "sku": "ALPHA-MOD-010",
+      "name": "WD Alpha Module (X) - Drone Edition",
+      "shortName": "Drone Edition",
+      "category": "main",
+      "specialty": "Aerial Robotics Kit",
+      "description": "Your first flying robot! Build and program a quadcopter with altitude hold, GPS navigation, and camera capabilities.",
+      "detailedDescription": "Enter the world of aerial robotics with this complete quadcopter kit. Features brushless motors, flight controller with GPS, FPV camera, and programmable flight patterns.",
+      
+      "technicalSpecs": {
+        "type": "Quadcopter",
+        "frameSize": "250mm",
+        "motors": "4x 2200KV brushless",
+        "flightController": "Betaflight F4",
+        "gps": "Yes with return-to-home",
+        "camera": "700TVL FPV camera",
+        "battery": "3S 2200mAh LiPo",
+        "flightTime": "12-15 minutes",
+        "controlRange": "500m"
+      },
+      
+      "features": [
+        "Altitude hold",
+        "GPS navigation",
+        "Return-to-home",
+        "FPV camera",
+        "Programmable flight paths",
+        "Acro mode for experts"
+      ],
+      
+      "pricing": {
+        "componentPrice": 8500,
+        "margin": 1105,
+        "discountAmount": 9605,
+        "finalPrice": 9700,
+        "currency": "INR"
+      },
+      
+      "launchInfo": {
+        "launchDate": "2024-12-05",
+        "isNew": true,
+        "isFeatured": true,
+        "popularity": 90
+      },
+      
+      "tags": ["drone", "aerial", "new", "premium", "quadcopter", "flying", "gps"],
+      "relatedProducts": ["WD-019", "WD-016", "WD-008"]
+    },
+    
+    {
+      "id": "WD-019",
+      "sku": "EXT-MOD-010",
+      "name": "WD Alpha Extension Module (X)",
+      "shortName": "Drone Camera Upgrade",
+      "category": "extension",
+      "specialty": "4K Camera & Gimbal System",
+      "description": "Upgrade your WD Alpha Drone with a 4K camera and 3-axis gimbal for professional aerial photography.",
+      
+      "pricing": {
+        "componentPrice": 6200,
+        "margin": 806,
+        "discountAmount": 7006,
+        "finalPrice": 7100,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["WD-018"],
+      "tags": ["drone", "camera", "4k", "gimbal", "new", "upgrade"],
+      "launchInfo": {
+        "launchDate": "2024-12-05",
+        "isNew": true
+      }
+    },
+    
+    {
+      "id": "WD-020",
+      "sku": "ALPHA-MOD-011",
+      "name": "WD Alpha Module (XI) - Swarm Bot",
+      "shortName": "Swarm Bot",
+      "category": "main",
+      "specialty": "Multi-Robot Swarm System",
+      "description": "Three-robot swarm system that demonstrates collective behavior, coordination, and swarm intelligence. Perfect for multi-agent systems research.",
+      
+      "pricing": {
+        "componentPrice": 11200,
+        "margin": 1456,
+        "discountAmount": 12656,
+        "finalPrice": 12800,
+        "currency": "INR"
+      },
+      
+      "features": [
+        "3-robot swarm system",
+        "Wireless inter-robot communication",
+        "Swarm intelligence algorithms",
+        "Formation control",
+        "Collective decision making"
+      ],
+      
+      "tags": ["swarm", "multi-robot", "new", "research", "premium", "coordination"],
+      "launchInfo": {
+        "launchDate": "2024-12-10",
+        "isNew": true,
+        "isFeatured": true,
+        "popularity": 84
+      }
+    },
+    
+    {
+      "id": "WD-021",
+      "sku": "ACC-BAT-001",
+      "name": "Extended Battery Pack",
+      "shortName": "Extended Battery",
+      "category": "accessory",
+      "specialty": "High Capacity Battery Pack",
+      "description": "Double the runtime with this high-capacity 12V 5000mAh Li-ion battery pack. Compatible with all WD Alpha main modules.",
+      
+      "pricing": {
+        "componentPrice": 1800,
+        "margin": 234,
+        "discountAmount": 2034,
+        "finalPrice": 2050,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["All main modules"],
+      "tags": ["accessory", "battery", "power", "upgrade"],
+      "launchInfo": {
+        "launchDate": "2024-11-20",
+        "isNew": true
+      }
+    },
+    
+    {
+      "id": "WD-022",
+      "sku": "ACC-SEN-001",
+      "name": "Advanced Sensor Pack",
+      "shortName": "Sensor Pack",
+      "category": "accessory",
+      "specialty": "Additional Sensor Collection",
+      "description": "Expand your robot's capabilities with additional sensors: temperature, humidity, gas, and sound sensors.",
+      
+      "pricing": {
+        "componentPrice": 1500,
+        "margin": 195,
+        "discountAmount": 1695,
+        "finalPrice": 1700,
+        "currency": "INR"
+      },
+      
+      "compatibility": ["All modules with sensor ports"],
+      "tags": ["accessory", "sensors", "environmental", "upgrade"],
+      "launchInfo": {
+        "launchDate": "2024-11-22",
+        "isNew": true
+      }
+    }
+  ],
+  
+  "bundles": [
+    {
+      "id": "BUNDLE-001",
+      "name": "Complete Learning Bundle",
+      "description": "Perfect for schools and institutions. Includes Foundation Kit + 3 popular extensions.",
+      "products": ["WD-001", "WD-009", "WD-010", "WD-011"],
+      "bundlePrice": 6800,
+      "saveAmount": 800,
+      "savePercentage": 10.5
+    },
+    {
+      "id": "BUNDLE-002",
+      "name": "AI Starter Bundle",
+      "description": "Start your AI journey with Vision Bot + accessories.",
+      "products": ["WD-016", "WD-021", "WD-022"],
+      "bundlePrice": 15500,
+      "saveAmount": 1200,
+      "savePercentage": 7.2
+    }
+  ],
+  
+  "stats": {
+    "totalProducts": 22,
+    "mainModules": 10,
+    "extensionModules": 12,
+    "newProducts": 7,
+    "averagePrice": 4250,
+    "mostExpensive": 14200,
+    "leastExpensive": 1300,
+    "totalValue": 93500
+  }
+}

@@ -3,635 +3,543 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IndusRoboTix | Professional Robotics Kits | Karachi, Pakistan</title>
+    <title>WD Alpha Robotics | Modular Robot Kits</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Professional robotics kits for Pakistani engineering students. Precision-engineered, modular kits made in Karachi. 2WD/4WD chassis, IoT projects, university projects.">
-    <meta name="keywords" content="robotics kits Pakistan, engineering projects, Arduino kits Karachi, STEM education Pakistan, university projects">
-    <meta name="author" content="IndusRoboTix">
+    <!-- External CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="custom.css">
     
-    <!-- Open Graph for Social Sharing -->
-    <meta property="og:title" content="IndusRoboTix | Professional Robotics Kits">
-    <meta property="og:description" content="Precision-engineered robotics kits for Pakistani students">
-    <meta property="og:image" content="https://indusrobotix.netlify.app/images/logo.png">
-    <meta property="og:url" content="https://indusrobotix.netlify.app">
+    <!-- External JavaScript Files -->
+    <script src="config.js" defer></script>
+    <script src="products-data.json" type="module" defer></script>
+    <script src="recent-launches.js" defer></script>
+    <script src="main.js" defer></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="WD Alpha Robotics - Modular, upgradeable robotics kits for education, research, and hobbyists. Complete kits with AI, vision, and autonomous capabilities.">
+    <meta name="keywords" content="robotics, robot kits, AI robots, modular robots, WD Alpha, STEM education">
+    <meta name="author" content="WD Alpha Robotics">
+    <meta property="og:title" content="WD Alpha Robotics | Modular Robot Kits">
+    <meta property="og:description" content="Advanced modular robotics kits with AI capabilities">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wdalpha-robotics.com">
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "WD Alpha Robotics",
+        "url": "https://wdalpha-robotics.com",
+        "logo": "https://wdalpha-robotics.com/logo.png",
+        "description": "Manufacturer of modular robotics kits",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tech City",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loader">
-        <div class="robot-loader">
-            <div class="robot-head"></div>
-            <div class="robot-body"></div>
+    <!-- Skip to Main Content for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading WD Alpha Products...</p>
         </div>
-        <p>Loading IndusRoboTix...</p>
     </div>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/923121179306" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Order Now!</span>
-    </a>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="logo.png" alt="IndusRoboTix Logo" class="logo-img">
-                <div class="logo-text">
-                    <h1>Indus<span>RoboTix</span></h1>
-                    <p class="logo-tagline">Precision Engineering</p>
-                </div>
-            </div>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <!-- Navigation Links -->
-            <div class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#modules" class="nav-link">Modules</a>
-                <a href="#gallery" class="nav-link">Gallery</a>
-                <a href="#testimonials" class="nav-link">Reviews</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="https://wa.me/923121179306" class="nav-btn">
-                    <i class="fab fa-whatsapp"></i> Order Now
-                    <span class="btn-badge">10% OFF</span>
-                </a>
-            </div>
+    
+    <!-- Notification Toast -->
+    <div id="notification-toast" class="notification-toast">
+        <span id="toast-message"></span>
+        <button class="toast-close"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <!-- Quick Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="cart-close"><i class="fas fa-times"></i></button>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-container">
-            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
-                <div class="hero-badge">
-                    <span class="badge-text">🚀 LAUNCH SALE</span>
-                    <span class="badge-discount">10% OFF All Kits</span>
-                </div>
-                
-                <h1 class="hero-title">
-                    Build <span class="gradient-text">Robotics</span><br>
-                    That <span class="highlight">Lasts</span>
-                </h1>
-                
-                <p class="hero-subtitle">
-                    Professional-grade robotics kits designed for Pakistani engineering students. 
-                    Move beyond temporary projects to <strong>permanent, portfolio-worthy</strong> robotics platforms.
-                </p>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <i class="fas fa-university"></i>
-                        <div>
-                            <h3>50+</h3>
-                            <p>Universities</p>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-user-graduate"></i>
-                        <div>
-                            <h3>300+</h3>
-                            <p>Students</p>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>100%</h3>
-                            <p>Made in Karachi</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-buttons">
-                    <a href="#modules" class="btn btn-primary">
-                        <i class="fas fa-robot"></i> Explore Modules
-                    </a>
-                    <a href="https://wa.me/923121179306" class="btn btn-whatsapp pulse">
-                        <i class="fab fa-whatsapp"></i> Quick Order
-                    </a>
-                    <a href="#gallery" class="btn btn-outline">
-                        <i class="fas fa-play-circle"></i> See in Action
-                    </a>
-                </div>
-            </div>
-            
-            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000">
-                <div class="product-showcase">
-                    <div class="product-main">
-                        <img src="images/module1.jpg" alt="Alpha Base Kit" class="product-img">
-                        <div class="product-label">Module I: Alpha Base</div>
-                    </div>
-                    <div class="product-mini">
-                        <img src="images/module3.jpg" alt="Line Follower">
-                        <img src="images/module5.jpg" alt="Bluetooth Control">
-                        <img src="images/module4.jpg" alt="IR Remote">
-                    </div>
-                </div>
-            </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically inserted -->
         </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <span>Scroll to explore</span>
-            <div class="mouse">
-                <div class="wheel"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">₹0</span>
             </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
         </div>
-    </section>
-
-    <!-- Features Banner -->
-    <section class="features-banner">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card" data-aos="zoom-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h4>Fast Delivery</h4>
-                    <p>Karachi: 24 hours | Pakistan: 3-5 days</p>
-                </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h4>30-Day Warranty</h4>
-                    <p>Full support on all components</p>
-                </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h4>Free Tutorials</h4>
-                    <p>Video guides & documentation</p>
-                </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h4>Bulk Discounts</h4>
-                    <p>Special rates for universities</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modules Section -->
-    <section id="modules" class="modules">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Our <span class="gradient-text">Modular</span> Ecosystem</h2>
-                <p class="section-subtitle">Start with Alpha Base, expand with sensor modules. Perfect for semester-long learning.</p>
-            </div>
-            
-            <div class="modules-grid">
-                <!-- Module I -->
-                <div class="module-card" data-aos="flip-left">
-                    <div class="module-badge">BESTSELLER</div>
-                    <div class="module-img-container">
-                        <img src="module1.jpg" alt="Alpha Base" class="module-img">
-                        <div class="module-overlay">
-                            <a href="module1.jpg" class="zoom-btn" data-lightbox="module1">
-                                <i class="fas fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="module-content">
-                        <div class="module-header">
-                            <h3>Module I: Alpha Base</h3>
-                            <span class="module-tag">Foundation</span>
-                        </div>
-                        <p class="module-desc">Your permanent mechanical platform. Laser-cut chassis, high-torque motors, professional hardware.</p>
-                        
-                        <div class="module-specs">
-                            <div class="spec">
-                                <i class="fas fa-ruler-combined"></i>
-                                <span>3mm Acrylic</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-cogs"></i>
-                                <span>2x DC Motors</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-bolt"></i>
-                                <span>3S Battery</span>
-                            </div>
-                        </div>
-                        
-                        <div class="module-price">
-                            <div class="price-main">
-                                <span class="price-old">1,450 PKR</span>
-                                <span class="price-new">1,300 PKR</span>
-                            </div>
-                            <span class="price-save">Save 150 PKR</span>
-                        </div>
-                        
-                        <div class="module-actions">
-                            <a href="https://wa.me/923121179306?text=I want Module I - Alpha Base" class="btn-module btn-module-primary">
-                                <i class="fab fa-whatsapp"></i> Buy Now
-                            </a>
-                            <button class="btn-module btn-module-outline details-btn" data-module="1">
-                                <i class="fas fa-info-circle"></i> Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Module III -->
-                <div class="module-card featured" data-aos="flip-left" data-aos-delay="100">
-                    <div class="module-badge">MOST POPULAR</div>
-                    <div class="module-img-container">
-                        <img src="module3.jpg" alt="Line Follower" class="module-img">
-                        <div class="module-overlay">
-                            <a href="module3.jpg" class="zoom-btn" data-lightbox="module3">
-                                <i class="fas fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="module-content">
-                        <div class="module-header">
-                            <h3>Module III: Line Follower</h3>
-                            <span class="module-tag">Autonomous</span>
-                        </div>
-                        <p class="module-desc">Complete autonomous robot with 3 IR sensors. Perfect for AI/robotics courses.</p>
-                        
-                        <div class="module-specs">
-                            <div class="spec">
-                                <i class="fas fa-satellite-dish"></i>
-                                <span>3x IR Sensors</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-microchip"></i>
-                                <span>Arduino UNO</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-project-diagram"></i>
-                                <span>L298N Driver</span>
-                            </div>
-                        </div>
-                        
-                        <div class="module-price">
-                            <div class="price-main">
-                                <span class="price-old">4,150 PKR</span>
-                                <span class="price-new">3,750 PKR</span>
-                            </div>
-                            <span class="price-save">Save 400 PKR</span>
-                        </div>
-                        
-                        <div class="module-actions">
-                            <a href="https://wa.me/923121179306?text=I want Module III - Line Follower" class="btn-module btn-module-primary">
-                                <i class="fab fa-whatsapp"></i> Buy Now
-                            </a>
-                            <button class="btn-module btn-module-outline details-btn" data-module="3">
-                                <i class="fas fa-info-circle"></i> Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Module V -->
-                <div class="module-card" data-aos="flip-left" data-aos-delay="200">
-                    <div class="module-badge">WIRELESS</div>
-                    <div class="module-img-container">
-                        <img src="module5.jpg" alt="Bluetooth Control" class="module-img">
-                        <div class="module-overlay">
-                            <a href="images/module5.jpg" class="zoom-btn" data-lightbox="module5">
-                                <i class="fas fa-search-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="module-content">
-                        <div class="module-header">
-                            <h3>Module V: Bluetooth Control</h3>
-                            <span class="module-tag">Smart</span>
-                        </div>
-                        <p class="module-desc">Control via smartphone app. HC-05 module included. Perfect for IoT projects.</p>
-                        
-                        <div class="module-specs">
-                            <div class="spec">
-                                <i class="fas fa-bluetooth"></i>
-                                <span>HC-05 Module</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-mobile-alt"></i>
-                                <span>App Control</span>
-                            </div>
-                            <div class="spec">
-                                <i class="fas fa-wifi"></i>
-                                <span>Wireless</span>
-                            </div>
-                        </div>
-                        
-                        <div class="module-price">
-                            <div class="price-main">
-                                <span class="price-old">4,250 PKR</span>
-                                <span class="price-new">3,850 PKR</span>
-                            </div>
-                            <span class="price-save">Save 400 PKR</span>
-                        </div>
-                        
-                        <div class="module-actions">
-                            <a href="https://wa.me/923121179306?text=I want Module V - Bluetooth Control" class="btn-module btn-module-primary">
-                                <i class="fab fa-whatsapp"></i> Buy Now
-                            </a>
-                            <button class="btn-module btn-module-outline details-btn" data-module="5">
-                                <i class="fas fa-info-circle"></i> Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- View All Button -->
-            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                <a href="#all-modules" class="btn btn-secondary">
-                    <i class="fas fa-boxes"></i> View All 8 Modules
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Project <span class="gradient-text">Gallery</span></h2>
-                <p class="section-subtitle">See what students are building with IndusRoboTix kits</p>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item" data-aos="zoom-in">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Student Project 1">
-                    <div class="gallery-overlay">
-                        <h4>Final Year Project</h4>
-                        <p>UET Karachi</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Student Project 2">
-                    <div class="gallery-overlay">
-                        <h4>Robotics Competition</h4>
-                        <p>NUST Islamabad</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Student Project 3">
-                    <div class="gallery-overlay">
-                        <h4>Lab Setup</h4>
-                        <p>KU Electronics Lab</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Student Project 4">
-                    <div class="gallery-overlay">
-                        <h4>Workshop</h4>
-                        <p>FAST University</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Student <span class="gradient-text">Reviews</span></h2>
-                <p class="section-subtitle">What engineering students say about IndusRoboTix</p>
-            </div>
-            
-            <div class="testimonial-slider">
-                <div class="testimonial-card" data-aos="fade-right">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"The quality is amazing! My Alpha Base lasted through 3 semesters of projects. Best investment for engineering students."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Raza">
-                        <div>
-                            <h4>Ahmed Raza</h4>
-                            <span>UET Karachi, Final Year</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-up">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p>"Local support makes all the difference. When I had issues, the IndusRoboTix team helped via WhatsApp within minutes."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sara Khan">
-                        <div>
-                            <h4>Sara Khan</h4>
-                            <span>NUST Islamabad</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-left">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"As a lab instructor, I recommend IndusRoboTix to all my students. The modular design is perfect for academic progression."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Prof. Ali">
-                        <div>
-                            <h4>Prof. Ali Rizvi</h4>
-                            <span>FAST University</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content" data-aos="zoom-in">
-                <h2>Ready to Start Your Robotics Journey?</h2>
-                <p>Join hundreds of successful engineering students. Get your professional kit today!</p>
-                
-                <div class="cta-buttons">
-                    <a href="https://wa.me/923121179306" class="btn btn-whatsapp btn-large">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Order
-                    </a>
-                    <a href="tel:+923121179306" class="btn btn-outline btn-large">
-                        <i class="fas fa-phone"></i> Call Now
-                    </a>
-                </div>
-                
-                <div class="cta-features">
-                    <span><i class="fas fa-check"></i> Free Karachi Delivery</span>
-                    <span><i class="fas fa-check"></i> 30-Day Support</span>
-                    <span><i class="fas fa-check"></i> University Discounts</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="header-top">
+                <div class="logo-container">
                     <div class="logo">
-                        <img src="images/logo.png" alt="IndusRoboTix Logo" class="logo-img">
+                        <i class="fas fa-robot logo-icon"></i>
                         <div class="logo-text">
-                            <h2>Indus<span>RoboTix</span></h2>
-                            <p class="logo-tagline">Engineering the Future</p>
+                            <h1 class="logo-title">WD Alpha Robotics</h1>
+                            <p class="logo-subtitle">Innovate. Build. Automate.</p>
                         </div>
                     </div>
-                    <p class="footer-about">Professional robotics kits designed and manufactured in Karachi for Pakistani engineering students.</p>
+                </div>
+                
+                <div class="header-controls">
+                    <!-- Cart Button with Counter -->
+                    <button id="cart-button" class="cart-button">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
                     
-                    <div class="social-links">
-                        <a href="https://instagram.com/indusrobotix" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <!-- Print Catalog -->
+                    <button id="print-catalog" class="print-btn" title="Print Catalog">
+                        <i class="fas fa-print"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="#products" class="nav-link active"><i class="fas fa-th-large"></i> Products</a></li>
+                    <li><a href="#new" class="nav-link"><i class="fas fa-rocket"></i> New Arrivals</a></li>
+                    <li><a href="#bundles" class="nav-link"><i class="fas fa-box"></i> Bundles</a></li>
+                    <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#support" class="nav-link"><i class="fas fa-life-ring"></i> Support</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Announcement Banner -->
+            <div id="announcement-banner" class="announcement-banner">
+                <div class="announcement-content">
+                    <span class="new-badge"><i class="fas fa-bullhorn"></i> LAUNCH ALERT</span>
+                    <span id="announcement-text">Loading announcement...</span>
+                    <a href="#new-products" class="view-new-btn">Explore Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <button class="announcement-close"><i class="fas fa-times"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main-content" class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2 class="hero-title">Build the Future with <span class="highlight">Modular Robotics</span></h2>
+                    <p class="hero-description">From beginner kits to advanced AI systems, WD Alpha provides scalable robotics solutions for every skill level.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="total-products">17</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="new-products">2</span>
+                            <span class="stat-label">New This Month</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Upgradeable</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="robot-animation">
+                        <i class="fas fa-robot hero-robot"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Control Panel -->
+            <section class="control-section">
+                <div class="control-panel">
+                    <!-- Category Filters -->
+                    <div class="category-section">
+                        <h3 class="section-title"><i class="fas fa-filter"></i> Filter by Category</h3>
+                        <div class="category-filters" id="category-filters">
+                            <!-- Categories will be dynamically generated -->
+                        </div>
+                    </div>
+                    
+                    <!-- Search Bar -->
+                    <div class="search-section">
+                        <h3 class="section-title"><i class="fas fa-search"></i> Find Products</h3>
+                        <div class="search-container">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="search-input" class="search-input" placeholder="Search by name, feature, or technology...">
+                            <button id="clear-search" class="clear-search" title="Clear search"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="search-suggestions" id="search-suggestions">
+                            <!-- Search suggestions will appear here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Sort & View Controls -->
+                    <div class="sort-section">
+                        <h3 class="section-title"><i class="fas fa-sort"></i> Sort & View</h3>
+                        <div class="sort-controls">
+                            <div class="sort-group">
+                                <label for="sort-select" class="sort-label">Sort by:</label>
+                                <select id="sort-select" class="sort-select">
+                                    <option value="newest">Newest First</option>
+                                    <option value="popular">Most Popular</option>
+                                    <option value="price-asc">Price: Low to High</option>
+                                    <option value="price-desc">Price: High to Low</option>
+                                    <option value="name-asc">Name: A to Z</option>
+                                    <option value="featured">Featured</option>
+                                </select>
+                            </div>
+                            
+                            <div class="view-group">
+                                <span class="view-label">View:</span>
+                                <div class="view-toggle">
+                                    <button class="view-btn active" data-view="grid" title="Grid View">
+                                        <i class="fas fa-th-large"></i>
+                                    </button>
+                                    <button class="view-btn" data-view="list" title="List View">
+                                        <i class="fas fa-list"></i>
+                                    </button>
+                                    <button class="view-btn" data-view="compact" title="Compact View">
+                                        <i class="fas fa-th"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="display-group">
+                                <span class="display-label">Items per page:</span>
+                                <select id="items-per-page" class="items-select">
+                                    <option value="9">9</option>
+                                    <option value="12" selected>12</option>
+                                    <option value="18">18</option>
+                                    <option value="24">24</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#modules">All Modules</a></li>
-                        <li><a href="#gallery">Project Gallery</a></li>
-                        <li><a href="#testimonials">Student Reviews</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                <!-- Active Filters Display -->
+                <div class="active-filters" id="active-filters">
+                    <!-- Active filters will appear here -->
+                </div>
+            </section>
+
+            <!-- Product Count & Stats -->
+            <div class="products-header">
+                <div class="product-count">
+                    <span id="product-count-text">Loading products...</span>
+                    <button id="reset-filters" class="reset-btn">Reset All Filters</button>
+                </div>
+                
+                <!-- Bulk Actions -->
+                <div class="bulk-actions">
+                    <button id="compare-btn" class="compare-btn" disabled>
+                        <i class="fas fa-exchange-alt"></i> Compare (<span id="compare-count">0</span>)
+                    </button>
+                    <button id="export-btn" class="export-btn">
+                        <i class="fas fa-file-export"></i> Export List
+                    </button>
+                    <button id="share-btn" class="share-btn">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid Container -->
+            <div class="products-container" id="products-container">
+                <!-- Products will be dynamically inserted here -->
+                <div class="loading-products">
+                    <div class="loader"></div>
+                    <p>Loading our robotics collection...</p>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container" id="pagination-container">
+                <!-- Pagination will be dynamically generated -->
+            </div>
+
+            <!-- Recent Launches Section -->
+            <section id="new-products" class="recent-launches-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-bolt"></i> Recently Launched
+                        <span class="new-indicator-badge" id="new-count-badge">2</span>
+                    </h2>
+                    <a href="#all-new" class="view-all-link">View All New Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="recent-products-grid" id="recent-products">
+                    <!-- New products will appear here -->
+                </div>
+            </section>
+
+            <!-- Comparison Modal -->
+            <div id="comparison-modal" class="comparison-modal">
+                <div class="comparison-content">
+                    <div class="comparison-header">
+                        <h3><i class="fas fa-exchange-alt"></i> Compare Products</h3>
+                        <button class="comparison-close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="comparison-body" id="comparison-body">
+                        <!-- Comparison table will appear here -->
+                    </div>
+                    <div class="comparison-footer">
+                        <button id="clear-comparison" class="secondary-btn">Clear All</button>
+                        <button id="print-comparison" class="primary-btn">Print Comparison</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick View Modal -->
+            <div id="quickview-modal" class="quickview-modal">
+                <div class="quickview-content">
+                    <!-- Quick view content will be dynamically inserted -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Product Categories Sidebar -->
+        <aside class="categories-sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-tags"></i> Product Categories</h3>
+            </div>
+            <ul class="categories-list" id="categories-list">
+                <!-- Categories will be dynamically generated -->
+            </ul>
+            
+            <div class="price-filter">
+                <h4><i class="fas fa-filter"></i> Price Range</h4>
+                <div class="price-slider">
+                    <input type="range" id="min-price" min="0" max="10000" value="0" class="price-range">
+                    <input type="range" id="max-price" min="0" max="10000" value="10000" class="price-range">
+                </div>
+                <div class="price-values">
+                    <span id="min-price-value">₹0</span>
+                    <span id="max-price-value">₹10,000</span>
+                </div>
+                <button id="apply-price-filter" class="apply-filter-btn">Apply Price Filter</button>
+            </div>
+            
+            <div class="featured-products">
+                <h4><i class="fas fa-star"></i> Featured Products</h4>
+                <div class="featured-list" id="featured-products">
+                    <!-- Featured products will appear here -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3><i class="fas fa-paper-plane"></i> Stay Updated</h3>
+                    <p>Get notified about new product launches, exclusive offers, and robotics tutorials.</p>
+                </div>
+                <form id="newsletter-form" class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" placeholder="Your email address" required>
+                        <button type="submit" class="subscribe-btn">Subscribe</button>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="newsletter-consent" required>
+                        <label for="newsletter-consent">I agree to receive product updates and promotional emails</label>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-robot"></i>
+                        <div>
+                            <h4>WD Alpha Robotics</h4>
+                            <p>Building the future, one module at a time</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Product Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#main-modules">Main Modules</a></li>
+                        <li><a href="#extension-kits">Extension Kits</a></li>
+                        <li><a href="#new-arrivals">New Arrivals</a></li>
+                        <li><a href="#premium-kits">Premium Kits</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Products</h3>
-                    <ul>
-                        <li><a href="#modules">Module I: Alpha Base</a></li>
-                        <li><a href="#modules">Module III: Line Follower</a></li>
-                        <li><a href="#modules">Module IV: IR Remote</a></li>
-                        <li><a href="#modules">Module V: Bluetooth</a></li>
-                        <li><a href="#modules">All 8 Modules</a></li>
+                <div class="footer-section">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#tutorials">Video Tutorials</a></li>
+                        <li><a href="#forum">Community Forum</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                        <li><a href="#warranty">Warranty Info</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Contact Info</h3>
+                <div class="footer-section">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#education">Education Program</a></li>
+                        <li><a href="#resellers">Become a Reseller</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Contact Info</h5>
                     <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone/WhatsApp</h4>
-                                <a href="tel:+923121179306">+92 312 1179306</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:indusrobotix@gmail.com">indusrobotix@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <span>Karachi, Pakistan</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Support Hours</h4>
-                                <span>9 AM - 11 PM, 7 Days</span>
-                            </div>
-                        </div>
+                        <p><i class="fas fa-envelope"></i> sales@wdalpha-robotics.com</p>
+                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Tech Park, Innovation District</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM IST</p>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <div class="payment-methods">
-                    <span>Accepted Payments:</span>
-                    <i class="fas fa-money-bill-wave" title="Cash"></i>
-                    <i class="fas fa-university" title="Bank Transfer"></i>
-                    <i class="fab fa-cc-visa" title="Visa"></i>
-                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
-                    <i class="fas fa-mobile-alt" title="JazzCash"></i>
-                    <i class="fas fa-wallet" title="Easypaisa"></i>
+                    <span class="payment-text">We Accept:</span>
+                    <i class="fab fa-cc-visa payment-icon"></i>
+                    <i class="fab fa-cc-mastercard payment-icon"></i>
+                    <i class="fab fa-cc-paypal payment-icon"></i>
+                    <i class="fab fa-cc-amex payment-icon"></i>
+                    <i class="fab fa-google-pay payment-icon"></i>
                 </div>
                 
                 <div class="copyright">
-                    <p>&copy; 2024 IndusRoboTix. All rights reserved. | Made with <i class="fas fa-heart"></i> in Karachi</p>
-                    <p class="footer-links">
-                        <a href="#">Privacy Policy</a> | 
-                        <a href="#">Terms of Service</a> | 
-                        <a href="#">Shipping Policy</a>
-                    </p>
+                    <p>&copy; <span id="current-year">2024</span> WD Alpha Robotics. All rights reserved.</p>
+                    <p>All prices in <span id="currency-display">INR (₹)</span> • Prices include 10% margin with 10% discount applied</p>
+                </div>
+                
+                <div class="footer-badges">
+                    <span class="badge secure-badge"><i class="fas fa-shield-alt"></i> Secure Payment</span>
+                    <span class="badge warranty-badge"><i class="fas fa-award"></i> 1 Year Warranty</span>
+                    <span class="badge support-badge"><i class="fas fa-headset"></i> 24/7 Support</span>
+                </div>
+            </div>
+            
+            <!-- Back to Top Button -->
+            <button id="back-to-top" class="back-to-top" title="Back to top">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </footer>
+    </div>
+
+    <!-- Product Quick View Template (Hidden) -->
+    <template id="product-template">
+        <div class="product-card">
+            <div class="product-badges">
+                <span class="badge new-badge"><i class="fas fa-star"></i> NEW</span>
+                <span class="badge category-badge">Full Kit</span>
+            </div>
+            
+            <div class="product-image">
+                <div class="image-container">
+                    <i class="fas fa-robot placeholder-icon"></i>
+                </div>
+                <button class="quick-view-btn" title="Quick View">
+                    <i class="fas fa-eye"></i>
+                </button>
+                <button class="compare-checkbox" title="Add to Compare">
+                    <i class="far fa-square"></i>
+                </button>
+            </div>
+            
+            <div class="product-info">
+                <h3 class="product-name">Product Name</h3>
+                <p class="product-specialty">Product Specialty Description</p>
+                
+                <div class="product-meta">
+                    <span class="meta-item"><i class="fas fa-calendar"></i> <span class="launch-date">Launch Date</span></span>
+                    <span class="meta-item"><i class="fas fa-cube"></i> <span class="category">Category</span></span>
+                </div>
+                
+                <div class="product-features">
+                    <!-- Features will be dynamically added -->
+                </div>
+                
+                <div class="price-section">
+                    <div class="final-price">₹0</div>
+                    <div class="price-breakdown">
+                        <small>Component: ₹0</small>
+                    </div>
+                </div>
+                
+                <div class="product-actions">
+                    <button class="details-btn">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                    <button class="cart-btn">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
                 </div>
             </div>
         </div>
-    </footer>
+    </template>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    
-    <script>
-        // Initialize AOS animations
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-        
-        // Remove loader when page loads
-        window.addEventListener('load', function() {
-            document.querySelector('.loader').style.display = 'none';
-        });
-    </script>
+    <!-- Comparison Row Template -->
+    <template id="comparison-row-template">
+        <tr>
+            <td class="feature-name">Feature</td>
+            <td class="feature-value">Value 1</td>
+            <td class="feature-value">Value 2</td>
+            <td class="feature-value">Value 3</td>
+            <td class="feature-value">Value 4</td>
+        </tr>
+    </template>
+
+    <!-- Recent Product Template -->
+    <template id="recent-product-template">
+        <div class="recent-product-card">
+            <div class="recent-badge">NEW</div>
+            <div class="recent-image">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="recent-info">
+                <h4 class="recent-name">Product Name</h4>
+                <p class="recent-desc">Product description here</p>
+                <div class="recent-price">₹0</div>
+                <button class="recent-view-btn">View Details</button>
+            </div>
+        </div>
+    </template>
 </body>
 </html>

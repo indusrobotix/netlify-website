@@ -1,0 +1,968 @@
+/* ============================================
+   CUSTOM ENHANCEMENTS & OVERRIDES
+   ============================================ */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Smooth Transitions for Theme Switching */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Focus Styles */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* Custom Selection Color */
+::selection {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ============================================
+   ENHANCED CARD GLOW EFFECTS
+   ============================================ */
+.product-card.new-product::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--warning-color), 
+        var(--primary-color), 
+        var(--accent-color), 
+        var(--warning-color));
+    border-radius: calc(var(--radius-xl) + 2px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card.new-product:hover::before {
+    opacity: 0.5;
+    animation: borderGlow 3s linear infinite;
+}
+
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Premium Card Styles */
+.product-card[data-tags*="premium"] {
+    border: 2px solid var(--warning-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card[data-tags*="premium"]::after {
+    content: 'PREMIUM';
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: linear-gradient(45deg, var(--warning-color), #fbbf24);
+    color: #1e293b;
+    padding: 5px 40px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   ENHANCED LOADING ANIMATIONS
+   ============================================ */
+.loading-products {
+    position: relative;
+}
+
+.loading-products::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        var(--primary-color)
+    );
+    animation: rotate 2s linear infinite;
+    filter: blur(10px);
+    opacity: 0.3;
+}
+
+@keyframes rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Product Card Loading Skeleton */
+.product-card.skeleton {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-surface);
+}
+
+.product-card.skeleton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
+}
+
+/* ============================================
+   ENHANCED BUTTON STYLES
+   ============================================ */
+/* Gradient Button Effects */
+.cart-btn, .checkout-btn, .primary-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cart-btn::before, .checkout-btn::before, .primary-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s;
+    z-index: -1;
+}
+
+.cart-btn:hover::before, .checkout-btn:hover::before, .primary-btn:hover::before {
+    left: 100%;
+}
+
+/* Ripple Effect on Click */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.btn-ripple:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(50, 50);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   ENHANCED SEARCH BAR
+   ============================================ */
+.search-container {
+    position: relative;
+}
+
+.search-container.focused {
+    transform: scale(1.02);
+}
+
+.search-input:focus ~ .search-icon {
+    color: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Search Pulse Animation */
+@keyframes searchPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+}
+
+.search-input:focus {
+    animation: searchPulse 2s infinite;
+}
+
+/* ============================================
+   ENHANCED PRICE DISPLAY
+   ============================================ */
+.final-price {
+    position: relative;
+    display: inline-block;
+}
+
+.final-price::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--success-color), 
+        transparent);
+    opacity: 0.5;
+}
+
+/* Discount Badge */
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, var(--danger-color), #ef4444);
+    color: white;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    z-index: 2;
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   ENHANCED CATEGORY FILTERS
+   ============================================ */
+.category-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.category-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.category-btn:hover::after {
+    width: 100px;
+    height: 100px;
+}
+
+.category-btn.active {
+    animation: buttonPop 0.3s ease;
+}
+
+@keyframes buttonPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* ============================================
+   ENHANCED MODAL EFFECTS
+   ============================================ */
+.comparison-modal.show .comparison-content,
+.quickview-modal.show .quickview-content {
+    animation: modalSlideUp 0.4s ease;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modal Backdrop Blur */
+.comparison-modal,
+.quickview-modal {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* ============================================
+   ENHANCED FOOTER
+   ============================================ */
+.footer-links a {
+    position: relative;
+    padding-left: 0;
+    transition: padding-left 0.3s ease;
+}
+
+.footer-links a::before {
+    content: '›';
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+}
+
+.footer-links a:hover {
+    padding-left: 15px;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+    left: 0;
+}
+
+/* Social Media Hover Colors */
+.social-link[href*="twitter"]:hover { background: #1DA1F2 !important; }
+.social-link[href*="linkedin"]:hover { background: #0077B5 !important; }
+.social-link[href*="github"]:hover { background: #333 !important; }
+.social-link[href*="youtube"]:hover { background: #FF0000 !important; }
+.social-link[href*="instagram"]:hover { 
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D) !important; 
+}
+
+/* ============================================
+   ENHANCED ROBOT ANIMATION
+   ============================================ */
+.hero-robot {
+    position: relative;
+}
+
+.hero-robot::before,
+.hero-robot::after {
+    content: '🤖';
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.3;
+    animation: floatSub 4s ease-in-out infinite;
+}
+
+.hero-robot::before {
+    top: -50px;
+    left: -50px;
+    animation-delay: 0.5s;
+}
+
+.hero-robot::after {
+    bottom: -50px;
+    right: -50px;
+    animation-delay: 1s;
+}
+
+@keyframes floatSub {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(10deg);
+    }
+}
+
+/* ============================================
+   ENHANCED PRODUCT FEATURES
+   ============================================ */
+.feature-tag {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-tag::before {
+    content: '✓';
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+.feature-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* ============================================
+   CUSTOM SCROLL-SPY HIGHLIGHT
+   ============================================ */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   ENHANCED PRICE SLIDER
+   ============================================ */
+.price-range::-webkit-slider-thumb {
+    transition: all 0.2s ease;
+}
+
+.price-range::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.2);
+}
+
+.price-range:active::-webkit-slider-thumb {
+    transform: scale(1.3);
+}
+
+/* ============================================
+   CUSTOM TOAST NOTIFICATIONS
+   ============================================ */
+.notification-toast.success {
+    border-left-color: var(--success-color);
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), var(--bg-surface));
+}
+
+.notification-toast.error {
+    border-left-color: var(--danger-color);
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), var(--bg-surface));
+}
+
+.notification-toast.warning {
+    border-left-color: var(--warning-color);
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), var(--bg-surface));
+}
+
+/* ============================================
+   ENHANCED COMPARISON TABLE
+   ============================================ */
+.comparison-table tr:hover .feature-name {
+    background: linear-gradient(90deg, var(--bg-card), rgba(59, 130, 246, 0.1));
+}
+
+.comparison-table td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--bg-card);
+    z-index: 1;
+}
+
+/* ============================================
+   CUSTOM CHECKBOX STYLES
+   ============================================ */
+.compare-checkbox {
+    position: relative;
+}
+
+.compare-checkbox i {
+    transition: all 0.3s ease;
+}
+
+.compare-checkbox.selected i::before {
+    content: '\f14a';
+    color: white;
+}
+
+.compare-checkbox::after {
+    content: 'Compare';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.compare-checkbox:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 110%;
+}
+
+/* ============================================
+   ENHANCED PRODUCT IMAGE HOVER
+   ============================================ */
+.product-image {
+    position: relative;
+    perspective: 1000px;
+}
+
+.image-container {
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.product-card:hover .image-container {
+    transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+}
+
+/* ============================================
+   CUSTOM LOADING BAR
+   ============================================ */
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--primary-color), 
+        var(--accent-color), 
+        var(--secondary-color));
+    z-index: var(--z-loading);
+    transition: width 0.3s ease;
+}
+
+/* ============================================
+   ENHANCED PAGINATION
+   ============================================ */
+.pagination-number {
+    position: relative;
+    overflow: hidden;
+}
+
+.pagination-number::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.pagination-number:hover::before {
+    left: 100%;
+}
+
+/* ============================================
+   CUSTOM TOOLTIPS
+   ============================================ */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    z-index: var(--z-tooltip);
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    bottom: 110%;
+}
+
+/* ============================================
+   ENHANCED FORM VALIDATION
+   ============================================ */
+.form-group input:invalid {
+    border-color: var(--danger-color);
+}
+
+.form-group input:valid {
+    border-color: var(--success-color);
+}
+
+.form-group input:focus:invalid {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* ============================================
+   CUSTOM CURSOR EFFECTS
+   ============================================ */
+@media (min-width: 1024px) {
+    .product-card,
+    .category-btn,
+    .nav-link,
+    .social-link {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%233b82f6' opacity='0.3'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%233b82f6'/%3E%3C/svg%3E") 16 16, pointer;
+    }
+}
+
+/* ============================================
+   PARALLAX EFFECT FOR HERO
+   ============================================ */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* ============================================
+   ENHANCED STAT COUNTERS
+   ============================================ */
+.stat-number {
+    position: relative;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-number::after {
+    content: '+';
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+/* ============================================
+   CUSTOM SELECT DROPDOWN
+   ============================================ */
+.sort-select, .items-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+/* ============================================
+   ENHANCED BORDER RADIUS
+   ============================================ */
+.hero-section,
+.control-panel,
+.product-card,
+.recent-launches-section,
+.categories-sidebar,
+.newsletter-section {
+    border-radius: 24px;
+}
+
+/* ============================================
+   CUSTOM SHADOWS
+   ============================================ */
+.product-card:hover {
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+.control-panel {
+    box-shadow: 
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+        0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE ENHANCEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    /* Reduce motion for mobile */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+    
+    /* Touch-friendly buttons */
+    .category-btn,
+    .view-btn,
+    .pagination-btn,
+    .pagination-number {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Larger tap targets */
+    .nav-link {
+        padding: 12px 16px;
+    }
+}
+
+/* ============================================
+   DARK MODE SPECIFIC ENHANCEMENTS
+   ============================================ */
+[data-theme="dark"] {
+    .product-card {
+        background: linear-gradient(145deg, #1e293b, #0f172a);
+    }
+    
+    .control-panel {
+        background: linear-gradient(145deg, #1e293b, #0f172a);
+        box-shadow: 
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+            0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* ============================================
+   LIGHT MODE SPECIFIC ENHANCEMENTS
+   ============================================ */
+[data-theme="light"] {
+    .product-card {
+        background: linear-gradient(145deg, #ffffff, #f8fafc);
+        box-shadow: 
+            0 4px 6px -1px rgba(0, 0, 0, 0.05),
+            0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    
+    .product-card:hover {
+        box-shadow: 
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            0 10px 10px -5px rgba(0, 0, 0, 0.04),
+            0 0 0 1px rgba(59, 130, 246, 0.2);
+    }
+    
+    .hero-section::before {
+        background: 
+            radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================ */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0056b3;
+        --text-primary: #000000;
+        --bg-surface: #ffffff;
+        --border-color: #000000;
+    }
+    
+    .product-card {
+        border: 2px solid var(--border-color);
+    }
+    
+    .category-btn.active {
+        border: 2px solid var(--border-color);
+    }
+}
+
+/* ============================================
+   REDUCED MOTION PREFERENCES
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .product-card:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   PRINT OPTIMIZATIONS
+   ============================================ */
+@media print {
+    .product-card {
+        break-inside: avoid;
+        border: 1px solid #000 !important;
+        background: white !important;
+        color: black !important;
+    }
+    
+    .final-price {
+        color: black !important;
+        font-weight: bold;
+    }
+    
+    .product-features {
+        display: none;
+    }
+}
+
+/* ============================================
+   CUSTOM UTILITY CLASSES
+   ============================================ */
+.glow {
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+                linear-gradient(135deg, var(--primary-color), var(--accent-color)) border-box;
+}
+
+.shadow-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* ============================================
+   CUSTOM ANIMATION DELAYS
+   ============================================ */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Stagger animations for product cards */
+.product-card:nth-child(1) { animation-delay: 50ms; }
+.product-card:nth-child(2) { animation-delay: 100ms; }
+.product-card:nth-child(3) { animation-delay: 150ms; }
+.product-card:nth-child(4) { animation-delay: 200ms; }
+.product-card:nth-child(5) { animation-delay: 250ms; }
+.product-card:nth-child(6) { animation-delay: 300ms; }
+
+/* ============================================
+   CUSTOM RESPONSIVE HELPERS
+   ============================================ */
+.visible-mobile { display: none; }
+.visible-desktop { display: block; }
+
+@media (max-width: 768px) {
+    .visible-mobile { display: block; }
+    .visible-desktop { display: none; }
+}
+
+/* ============================================
+   FINAL TOUCHES
+   ============================================ */
+body {
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Ensure images don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Better focus for keyboard navigation */
+.skip-link:focus {
+    top: 0;
+}
+
+/* Remove outline for mouse users but keep for keyboard */
+:focus:not(:focus-visible) {
+    outline: none;
+}

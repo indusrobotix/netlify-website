@@ -3,373 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WD Alpha Robotics | Modular Robot Kits</title>
+    <title>IndusRoboTix | Modular Robotics Kits in Pakistan</title>
+    <meta name="description" content="Pakistan's leading modular robotics kits by IndusRoboTix. Affordable, educational robotics kits with 2WD Alpha modules.">
+    <meta name="keywords" content="robotics Pakistan, IndusRoboTix, 2WD Alpha, robot kits, STEM Pakistan, educational robotics">
+    <meta name="author" content="IndusRoboTix | Furqan Khatti">
     
-    <!-- External CSS Files -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="custom.css">
     
-    <!-- External JavaScript Files -->
-    <script src="config.js" defer></script>
-    <script src="products-data.json" type="module" defer></script>
-    <script src="recent-launches.js" defer></script>
-    <script src="main.js" defer></script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="WD Alpha Robotics - Modular, upgradeable robotics kits for education, research, and hobbyists. Complete kits with AI, vision, and autonomous capabilities.">
-    <meta name="keywords" content="robotics, robot kits, AI robots, modular robots, WD Alpha, STEM education">
-    <meta name="author" content="WD Alpha Robotics">
-    <meta property="og:title" content="WD Alpha Robotics | Modular Robot Kits">
-    <meta property="og:description" content="Advanced modular robotics kits with AI capabilities">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wdalpha-robotics.com">
-    
-    <!-- Structured Data for SEO -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "WD Alpha Robotics",
-        "url": "https://wdalpha-robotics.com",
-        "logo": "https://wdalpha-robotics.com/logo.png",
-        "description": "Manufacturer of modular robotics kits",
+        "name": "IndusRoboTix",
+        "url": "https://indusrobotix.com",
+        "logo": "https://indusrobotix.com/logo.png",
+        "description": "Pakistan's premier modular robotics kits manufacturer",
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Tech City",
-            "addressCountry": "IN"
+            "addressCountry": "PK"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Furqan Khatti"
         }
     }
     </script>
 </head>
 <body>
-    <!-- Skip to Main Content for Accessibility -->
+    <!-- Skip to Content (Accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <!-- Loading Overlay -->
     <div id="loading-overlay" class="loading-overlay">
-        <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading WD Alpha Products...</p>
-        </div>
-    </div>
-    
-    <!-- Notification Toast -->
-    <div id="notification-toast" class="notification-toast">
-        <span id="toast-message"></span>
-        <button class="toast-close"><i class="fas fa-times"></i></button>
-    </div>
-    
-    <!-- Quick Cart Sidebar -->
-    <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
-            <button class="cart-close"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <!-- Cart items will be dynamically inserted -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total-price">₹0</span>
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
             </div>
-            <button class="checkout-btn">Proceed to Checkout</button>
+            <div class="loading-text">
+                <h3>Loading IndusRoboTix</h3>
+                <p>Pakistan's Premier Robotics Platform</p>
+            </div>
         </div>
     </div>
-    <div id="cart-overlay" class="cart-overlay"></div>
     
     <!-- Main Container -->
     <div class="container">
-        <!-- Header Section -->
+        <!-- Header -->
         <header class="main-header">
             <div class="header-top">
-                <div class="logo-container">
+                <div class="logo-section">
                     <div class="logo">
                         <i class="fas fa-robot logo-icon"></i>
                         <div class="logo-text">
-                            <h1 class="logo-title">WD Alpha Robotics</h1>
-                            <p class="logo-subtitle">Innovate. Build. Automate.</p>
+                            <h1 class="company-name">IndusRoboTix</h1>
+                            <p class="tagline">Robotics Reimagined in Pakistan</p>
                         </div>
+                    </div>
+                    <div class="company-info">
+                        <span class="flag">🇵🇰</span>
+                        <span class="currency">PKR</span>
                     </div>
                 </div>
                 
                 <div class="header-controls">
-                    <!-- Cart Button with Counter -->
-                    <button id="cart-button" class="cart-button">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cart-count">0</span>
-                    </button>
-                    
-                    <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+                    <button id="theme-toggle" class="theme-btn" title="Toggle Theme">
                         <i class="fas fa-moon"></i>
                     </button>
-                    
-                    <!-- Print Catalog -->
-                    <button id="print-catalog" class="print-btn" title="Print Catalog">
-                        <i class="fas fa-print"></i>
+                    <button id="cart-toggle" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="cart-count">0</span>
                     </button>
                 </div>
             </div>
             
             <!-- Navigation -->
             <nav class="main-nav">
-                <ul class="nav-menu">
-                    <li><a href="#products" class="nav-link active"><i class="fas fa-th-large"></i> Products</a></li>
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#products" class="nav-link"><i class="fas fa-cube"></i> 2WD Alpha Kits</a></li>
                     <li><a href="#new" class="nav-link"><i class="fas fa-rocket"></i> New Arrivals</a></li>
-                    <li><a href="#bundles" class="nav-link"><i class="fas fa-box"></i> Bundles</a></li>
                     <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
-                    <li><a href="#support" class="nav-link"><i class="fas fa-life-ring"></i> Support</a></li>
-                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#support" class="nav-link"><i class="fas fa-headset"></i> Support</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Contact</a></li>
                 </ul>
             </nav>
             
             <!-- Announcement Banner -->
             <div id="announcement-banner" class="announcement-banner">
                 <div class="announcement-content">
-                    <span class="new-badge"><i class="fas fa-bullhorn"></i> LAUNCH ALERT</span>
-                    <span id="announcement-text">Loading announcement...</span>
-                    <a href="#new-products" class="view-new-btn">Explore Now <i class="fas fa-arrow-right"></i></a>
+                    <span class="announcement-badge"><i class="fas fa-bullhorn"></i> PAKISTAN MADE</span>
+                    <span id="announcement-text">Robotics kits proudly manufactured in Pakistan</span>
+                    <a href="#products" class="announcement-cta">Explore Now →</a>
                 </div>
-                <button class="announcement-close"><i class="fas fa-times"></i></button>
             </div>
         </header>
-
+        
         <!-- Main Content -->
         <main id="main-content" class="main-content">
             <!-- Hero Section -->
-            <section class="hero-section">
+            <section class="hero-section" id="home">
                 <div class="hero-content">
-                    <h2 class="hero-title">Build the Future with <span class="highlight">Modular Robotics</span></h2>
-                    <p class="hero-description">From beginner kits to advanced AI systems, WD Alpha provides scalable robotics solutions for every skill level.</p>
+                    <h2 class="hero-title">Build the Future with <span class="hero-highlight">Pakistani Robotics</span></h2>
+                    <p class="hero-description">IndusRoboTix brings you modular, affordable, and educational robotics kits designed and manufactured in Pakistan. Perfect for students, hobbyists, and educators.</p>
+                    
                     <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" id="total-products">17</span>
-                            <span class="stat-label">Products</span>
+                        <div class="stat">
+                            <span class="stat-number" id="total-kits">15</span>
+                            <span class="stat-label">2WD Alpha Kits</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="new-products">2</span>
+                        <div class="stat">
+                            <span class="stat-number" id="new-kits">3</span>
                             <span class="stat-label">New This Month</span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat">
                             <span class="stat-number">100%</span>
-                            <span class="stat-label">Upgradeable</span>
+                            <span class="stat-label">Pakistani Made</span>
                         </div>
                     </div>
+                    
+                    <div class="hero-actions">
+                        <a href="#products" class="btn btn-primary">
+                            <i class="fas fa-robot"></i> View All Kits
+                        </a>
+                        <a href="#new" class="btn btn-secondary">
+                            <i class="fas fa-bolt"></i> New Arrivals
+                        </a>
+                    </div>
                 </div>
+                
                 <div class="hero-visual">
-                    <div class="robot-animation">
-                        <i class="fas fa-robot hero-robot"></i>
+                    <div class="robot-visual">
+                        <i class="fas fa-robot"></i>
+                        <div class="visual-text">2WD Alpha</div>
                     </div>
                 </div>
             </section>
-
-            <!-- Control Panel -->
-            <section class="control-section">
-                <div class="control-panel">
-                    <!-- Category Filters -->
-                    <div class="category-section">
-                        <h3 class="section-title"><i class="fas fa-filter"></i> Filter by Category</h3>
-                        <div class="category-filters" id="category-filters">
-                            <!-- Categories will be dynamically generated -->
-                        </div>
-                    </div>
+            
+            <!-- Products Section -->
+            <section class="products-section" id="products">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-cubes"></i> 2WD Alpha Modular Kits
+                        <span class="section-subtitle">Complete robotics solutions for every level</span>
+                    </h2>
                     
-                    <!-- Search Bar -->
-                    <div class="search-section">
-                        <h3 class="section-title"><i class="fas fa-search"></i> Find Products</h3>
-                        <div class="search-container">
+                    <div class="section-controls">
+                        <div class="search-box">
                             <i class="fas fa-search search-icon"></i>
-                            <input type="text" id="search-input" class="search-input" placeholder="Search by name, feature, or technology...">
-                            <button id="clear-search" class="clear-search" title="Clear search"><i class="fas fa-times"></i></button>
+                            <input type="text" id="search-input" class="search-input" placeholder="Search kits by name or feature...">
+                            <button id="clear-search" class="clear-search" title="Clear search">
+                                <i class="fas fa-times"></i>
+                            </button>
                         </div>
-                        <div class="search-suggestions" id="search-suggestions">
-                            <!-- Search suggestions will appear here -->
-                        </div>
-                    </div>
-                    
-                    <!-- Sort & View Controls -->
-                    <div class="sort-section">
-                        <h3 class="section-title"><i class="fas fa-sort"></i> Sort & View</h3>
-                        <div class="sort-controls">
-                            <div class="sort-group">
-                                <label for="sort-select" class="sort-label">Sort by:</label>
-                                <select id="sort-select" class="sort-select">
+                        
+                        <div class="filter-controls">
+                            <div class="filter-group">
+                                <label for="category-filter"><i class="fas fa-filter"></i> Category:</label>
+                                <select id="category-filter" class="filter-select">
+                                    <option value="all">All Kits</option>
+                                    <option value="main">Main Modules</option>
+                                    <option value="extension">Extension Kits</option>
+                                    <option value="new">New Arrivals</option>
+                                    <option value="starter">Starter Kits</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="sort-filter"><i class="fas fa-sort"></i> Sort:</label>
+                                <select id="sort-filter" class="filter-select">
                                     <option value="newest">Newest First</option>
-                                    <option value="popular">Most Popular</option>
-                                    <option value="price-asc">Price: Low to High</option>
-                                    <option value="price-desc">Price: High to Low</option>
-                                    <option value="name-asc">Name: A to Z</option>
-                                    <option value="featured">Featured</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="name">Name: A-Z</option>
                                 </select>
                             </div>
                             
-                            <div class="view-group">
-                                <span class="view-label">View:</span>
-                                <div class="view-toggle">
-                                    <button class="view-btn active" data-view="grid" title="Grid View">
-                                        <i class="fas fa-th-large"></i>
-                                    </button>
-                                    <button class="view-btn" data-view="list" title="List View">
-                                        <i class="fas fa-list"></i>
-                                    </button>
-                                    <button class="view-btn" data-view="compact" title="Compact View">
-                                        <i class="fas fa-th"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <div class="display-group">
-                                <span class="display-label">Items per page:</span>
-                                <select id="items-per-page" class="items-select">
-                                    <option value="9">9</option>
-                                    <option value="12" selected>12</option>
-                                    <option value="18">18</option>
-                                    <option value="24">24</option>
-                                    <option value="all">All</option>
-                                </select>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid" title="Grid View">
+                                    <i class="fas fa-th-large"></i>
+                                </button>
+                                <button class="view-btn" data-view="list" title="List View">
+                                    <i class="fas fa-list"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Active Filters Display -->
+                <!-- Active Filters -->
                 <div class="active-filters" id="active-filters">
                     <!-- Active filters will appear here -->
                 </div>
-            </section>
-
-            <!-- Product Count & Stats -->
-            <div class="products-header">
-                <div class="product-count">
-                    <span id="product-count-text">Loading products...</span>
-                    <button id="reset-filters" class="reset-btn">Reset All Filters</button>
+                
+                <!-- Products Count -->
+                <div class="products-count" id="products-count">
+                    Loading products...
                 </div>
                 
-                <!-- Bulk Actions -->
-                <div class="bulk-actions">
-                    <button id="compare-btn" class="compare-btn" disabled>
-                        <i class="fas fa-exchange-alt"></i> Compare (<span id="compare-count">0</span>)
-                    </button>
-                    <button id="export-btn" class="export-btn">
-                        <i class="fas fa-file-export"></i> Export List
-                    </button>
-                    <button id="share-btn" class="share-btn">
-                        <i class="fas fa-share-alt"></i> Share
-                    </button>
+                <!-- Products Grid -->
+                <div class="products-container" id="products-container">
+                    <!-- Products will be loaded here -->
+                    <div class="loading-products">
+                        <div class="loading-spinner"></div>
+                        <p>Loading IndusRoboTix kits...</p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Products Grid Container -->
-            <div class="products-container" id="products-container">
-                <!-- Products will be dynamically inserted here -->
-                <div class="loading-products">
-                    <div class="loader"></div>
-                    <p>Loading our robotics collection...</p>
+                
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- Pagination will be generated here -->
                 </div>
-            </div>
-
-            <!-- Pagination -->
-            <div class="pagination-container" id="pagination-container">
-                <!-- Pagination will be dynamically generated -->
-            </div>
-
-            <!-- Recent Launches Section -->
-            <section id="new-products" class="recent-launches-section">
+            </section>
+            
+            <!-- New Arrivals -->
+            <section class="new-arrivals" id="new">
                 <div class="section-header">
                     <h2 class="section-title">
-                        <i class="fas fa-bolt"></i> Recently Launched
-                        <span class="new-indicator-badge" id="new-count-badge">2</span>
+                        <i class="fas fa-rocket"></i> New Arrivals
+                        <span class="new-badge">NEW</span>
                     </h2>
-                    <a href="#all-new" class="view-all-link">View All New Products <i class="fas fa-arrow-right"></i></a>
+                    <a href="#all-new" class="view-all">View All →</a>
                 </div>
-                <div class="recent-products-grid" id="recent-products">
+                
+                <div class="new-products-grid" id="new-products">
                     <!-- New products will appear here -->
                 </div>
             </section>
-
-            <!-- Comparison Modal -->
-            <div id="comparison-modal" class="comparison-modal">
-                <div class="comparison-content">
-                    <div class="comparison-header">
-                        <h3><i class="fas fa-exchange-alt"></i> Compare Products</h3>
-                        <button class="comparison-close"><i class="fas fa-times"></i></button>
+            
+            <!-- About IndusRoboTix -->
+            <section class="about-section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2><i class="fas fa-flag-pakistan"></i> About IndusRoboTix</h2>
+                        <p>Founded by <strong>Furqan Khatti</strong>, IndusRoboTix is Pakistan's premier robotics kit manufacturer. We design and produce affordable, high-quality modular robotics kits to promote STEM education across Pakistan.</p>
+                        
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-industry"></i>
+                                <h4>Made in Pakistan</h4>
+                                <p>Proudly designed and manufactured locally</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h4>Educational Focus</h4>
+                                <p>Perfect for schools and universities</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-cogs"></i>
+                                <h4>Modular Design</h4>
+                                <p>Upgradeable and expandable kits</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <h4>Affordable Pricing</h4>
+                                <p>Competitive prices in PKR</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="comparison-body" id="comparison-body">
-                        <!-- Comparison table will appear here -->
-                    </div>
-                    <div class="comparison-footer">
-                        <button id="clear-comparison" class="secondary-btn">Clear All</button>
-                        <button id="print-comparison" class="primary-btn">Print Comparison</button>
+                    
+                    <div class="about-visual">
+                        <div class="pakistan-flag">
+                            🇵🇰
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Quick View Modal -->
-            <div id="quickview-modal" class="quickview-modal">
-                <div class="quickview-content">
-                    <!-- Quick view content will be dynamically inserted -->
+            </section>
+            
+            <!-- Contact Section -->
+            <section class="contact-section" id="contact">
+                <h2><i class="fas fa-envelope"></i> Contact IndusRoboTix</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <h4>Founder</h4>
+                            <p>Furqan Khatti</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>Coming Soon</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@indusrobotix.pk</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </main>
-
-        <!-- Product Categories Sidebar -->
-        <aside class="categories-sidebar">
-            <div class="sidebar-header">
-                <h3><i class="fas fa-tags"></i> Product Categories</h3>
-            </div>
-            <ul class="categories-list" id="categories-list">
-                <!-- Categories will be dynamically generated -->
-            </ul>
-            
-            <div class="price-filter">
-                <h4><i class="fas fa-filter"></i> Price Range</h4>
-                <div class="price-slider">
-                    <input type="range" id="min-price" min="0" max="10000" value="0" class="price-range">
-                    <input type="range" id="max-price" min="0" max="10000" value="10000" class="price-range">
-                </div>
-                <div class="price-values">
-                    <span id="min-price-value">₹0</span>
-                    <span id="max-price-value">₹10,000</span>
-                </div>
-                <button id="apply-price-filter" class="apply-filter-btn">Apply Price Filter</button>
-            </div>
-            
-            <div class="featured-products">
-                <h4><i class="fas fa-star"></i> Featured Products</h4>
-                <div class="featured-list" id="featured-products">
-                    <!-- Featured products will appear here -->
-                </div>
-            </div>
-        </aside>
-
-        <!-- Newsletter Section -->
-        <section class="newsletter-section">
-            <div class="newsletter-content">
-                <div class="newsletter-text">
-                    <h3><i class="fas fa-paper-plane"></i> Stay Updated</h3>
-                    <p>Get notified about new product launches, exclusive offers, and robotics tutorials.</p>
-                </div>
-                <form id="newsletter-form" class="newsletter-form">
-                    <div class="form-group">
-                        <input type="email" id="newsletter-email" placeholder="Your email address" required>
-                        <button type="submit" class="subscribe-btn">Subscribe</button>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="newsletter-consent" required>
-                        <label for="newsletter-consent">I agree to receive product updates and promotional emails</label>
-                    </div>
-                </form>
-            </div>
-        </section>
-
+        
         <!-- Footer -->
         <footer class="main-footer">
             <div class="footer-content">
@@ -377,169 +321,82 @@
                     <div class="footer-logo">
                         <i class="fas fa-robot"></i>
                         <div>
-                            <h4>WD Alpha Robotics</h4>
-                            <p>Building the future, one module at a time</p>
+                            <h3>IndusRoboTix</h3>
+                            <p>Robotics Reimagined in Pakistan</p>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <p class="footer-description">Pakistan's leading manufacturer of modular robotics kits and STEM education solutions.</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h5>Product Categories</h5>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">2WD Alpha Kits</a></li>
+                        <li><a href="#new">New Arrivals</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
                     <ul class="footer-links">
                         <li><a href="#main-modules">Main Modules</a></li>
                         <li><a href="#extension-kits">Extension Kits</a></li>
-                        <li><a href="#new-arrivals">New Arrivals</a></li>
+                        <li><a href="#starter-kits">Starter Kits</a></li>
                         <li><a href="#premium-kits">Premium Kits</a></li>
                         <li><a href="#accessories">Accessories</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h5>Support</h5>
-                    <ul class="footer-links">
-                        <li><a href="#documentation">Documentation</a></li>
-                        <li><a href="#tutorials">Video Tutorials</a></li>
-                        <li><a href="#forum">Community Forum</a></li>
-                        <li><a href="#contact">Contact Support</a></li>
-                        <li><a href="#warranty">Warranty Info</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h5>Company</h5>
-                    <ul class="footer-links">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#education">Education Program</a></li>
-                        <li><a href="#resellers">Become a Reseller</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h5>Contact Info</h5>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> sales@wdalpha-robotics.com</p>
-                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Tech Park, Innovation District</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM IST</p>
+                    <h4>Contact Info</h4>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> Pakistan</p>
+                        <p><i class="fas fa-user"></i> Furqan Khatti</p>
+                        <p><i class="fas fa-envelope"></i> contact@indusrobotix.pk</p>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <div class="payment-methods">
-                    <span class="payment-text">We Accept:</span>
-                    <i class="fab fa-cc-visa payment-icon"></i>
-                    <i class="fab fa-cc-mastercard payment-icon"></i>
-                    <i class="fab fa-cc-paypal payment-icon"></i>
-                    <i class="fab fa-cc-amex payment-icon"></i>
-                    <i class="fab fa-google-pay payment-icon"></i>
-                </div>
-                
                 <div class="copyright">
-                    <p>&copy; <span id="current-year">2024</span> WD Alpha Robotics. All rights reserved.</p>
-                    <p>All prices in <span id="currency-display">INR (₹)</span> • Prices include 10% margin with 10% discount applied</p>
+                    <p>&copy; <span id="current-year">2024</span> IndusRoboTix. All rights reserved.</p>
+                    <p>All prices in <strong>PKR (₨)</strong> • Proudly made in Pakistan 🇵🇰</p>
                 </div>
                 
-                <div class="footer-badges">
-                    <span class="badge secure-badge"><i class="fas fa-shield-alt"></i> Secure Payment</span>
-                    <span class="badge warranty-badge"><i class="fas fa-award"></i> 1 Year Warranty</span>
-                    <span class="badge support-badge"><i class="fas fa-headset"></i> 24/7 Support</span>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            
-            <!-- Back to Top Button -->
-            <button id="back-to-top" class="back-to-top" title="Back to top">
-                <i class="fas fa-chevron-up"></i>
-            </button>
         </footer>
     </div>
-
-    <!-- Product Quick View Template (Hidden) -->
-    <template id="product-template">
-        <div class="product-card">
-            <div class="product-badges">
-                <span class="badge new-badge"><i class="fas fa-star"></i> NEW</span>
-                <span class="badge category-badge">Full Kit</span>
-            </div>
-            
-            <div class="product-image">
-                <div class="image-container">
-                    <i class="fas fa-robot placeholder-icon"></i>
-                </div>
-                <button class="quick-view-btn" title="Quick View">
-                    <i class="fas fa-eye"></i>
-                </button>
-                <button class="compare-checkbox" title="Add to Compare">
-                    <i class="far fa-square"></i>
-                </button>
-            </div>
-            
-            <div class="product-info">
-                <h3 class="product-name">Product Name</h3>
-                <p class="product-specialty">Product Specialty Description</p>
-                
-                <div class="product-meta">
-                    <span class="meta-item"><i class="fas fa-calendar"></i> <span class="launch-date">Launch Date</span></span>
-                    <span class="meta-item"><i class="fas fa-cube"></i> <span class="category">Category</span></span>
-                </div>
-                
-                <div class="product-features">
-                    <!-- Features will be dynamically added -->
-                </div>
-                
-                <div class="price-section">
-                    <div class="final-price">₹0</div>
-                    <div class="price-breakdown">
-                        <small>Component: ₹0</small>
-                    </div>
-                </div>
-                
-                <div class="product-actions">
-                    <button class="details-btn">
-                        <i class="fas fa-info-circle"></i> Details
-                    </button>
-                    <button class="cart-btn">
-                        <i class="fas fa-cart-plus"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
+    
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
         </div>
-    </template>
-
-    <!-- Comparison Row Template -->
-    <template id="comparison-row-template">
-        <tr>
-            <td class="feature-name">Feature</td>
-            <td class="feature-value">Value 1</td>
-            <td class="feature-value">Value 2</td>
-            <td class="feature-value">Value 3</td>
-            <td class="feature-value">Value 4</td>
-        </tr>
-    </template>
-
-    <!-- Recent Product Template -->
-    <template id="recent-product-template">
-        <div class="recent-product-card">
-            <div class="recent-badge">NEW</div>
-            <div class="recent-image">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="recent-info">
-                <h4 class="recent-name">Product Name</h4>
-                <p class="recent-desc">Product description here</p>
-                <div class="recent-price">₹0</div>
-                <button class="recent-view-btn">View Details</button>
-            </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will appear here -->
         </div>
-    </template>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">₨0</span>
+            </div>
+            <button class="btn btn-primary checkout-btn">Checkout</button>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="products.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
